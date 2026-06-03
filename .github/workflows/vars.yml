@@ -29,6 +29,7 @@ jobs:
            echo "Workflow Variable | $author has created the api $baseapi which will expire in $expire"
            echo "Config Variable |  Version of app is ${{vars.VERSION}}"
            echo "Secret Variable |  Secret key is ${{secrets.KEY}}"
+           echo "Context Variable |  Repository name is ${{github.repository}}"
         env:
             expire : 10 days
           
