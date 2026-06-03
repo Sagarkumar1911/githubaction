@@ -1,0 +1,30 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Variables in GitHub Actions
+
+# Controls when the workflow will run
+on:
+
+  push:
+  workflow_dispatch:
+
+env:
+    author : master
+  
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    env:
+        baseapi : http:// baseurl.api/
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+
+      # Runs a set of commands using the runners shell
+      - name: All type of variables and Secrets
+        run: echo "$author has created the api $baseapi which will expire in $expire"
+        env:
+            expire : 10 days
+          
