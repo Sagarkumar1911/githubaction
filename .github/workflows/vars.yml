@@ -25,7 +25,10 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: All type of variables and Secrets
-        run: echo "$author has created the api $baseapi which will expire in $expire"
+        run: |
+           echo "Workflow Variable | $author has created the api $baseapi which will expire in $expire"
+           echo "Config Variable |  Version of app is ${{vars.VERSION}}"
+           echo "Secret Variable |  Secret key is ${{secrets.KEY}}"
         env:
             expire : 10 days
           
